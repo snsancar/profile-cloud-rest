@@ -3,14 +3,14 @@ Apsis:
 =======
 Coding Testing from Apsis AB, this is a RESTful webservice application to store/get the named counters details.
 
-Implement Caching for storing the response from request, so next time it can get the response from cache.
+ - Implement Caching for storing the response from request, so next time it can get the response from cache to improve the performance.
 
 
 How to Build the code:
 ======================
-
+```sh
 mvn clean install
-
+```
 
 How to test the application:
 ============================
@@ -34,9 +34,8 @@ To add the Counter value for the existing Counter
 
 http://localhost:8080/profile/update
 
-
-
-
+What needs to be done to make this as a complete REST Service
+=============================================================
 
 Persistence Layer:
 ==================
@@ -51,7 +50,7 @@ Supports
 	- Load balancing - using Shards
 
 Fault Tolerance:
-=================
+================
 
 Circuit Breaker pattern using Netflix Hystrix
 	- using fall back method
@@ -64,5 +63,5 @@ Scalability:
 Authentication:
 ==============
 
-Basic HTTP Authentication with SSL
-OAuth 2.0
+- Basic HTTP Authentication with SSL
+- OAuth 2.0
