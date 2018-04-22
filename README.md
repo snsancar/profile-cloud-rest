@@ -5,6 +5,14 @@ Coding Testing from Apsis AB, this is a RESTful webservice application to store/
 
  - Implement Caching for storing the response from request, so next time it can get the response from cache to improve the performance.
 
+Technologies Used:
+==================
+
+- Java 8
+- Spring Boot
+- STS as IDE
+- GIT Bash for code commit
+- GIT Hub as Code Repository
 
 How to Build the code:
 ======================
