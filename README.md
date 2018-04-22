@@ -8,8 +8,9 @@ Coding Testing from Apsis AB, this is a RESTful webservice application to store/
 Technologies Used:
 ==================
 
-- Java 8
-- Spring Boot
+* [Java 8] [java] - Used Lambda Expressions and Streaming API to work with Collections like List, also used Functional programming concepts like map, collect, filter etc..
+* [Maven] [maven] - Used Maven for building Spring Rest API Application and to maintain the dependencies jars in Central repository.
+* [Spring Boot] [springboot] - Spring boot to easily run the Spring based applications locally and using embedded web container.
 - STS as IDE
 - GIT Bash for code commit
 - GIT Hub as Code Repository
@@ -79,3 +80,8 @@ Authentication:
 
 - Basic HTTP Authentication with SSL
 - OAuth 2.0
+
+
+[java]: <https://www.oracle.com/java/index.html>
+[springboot]: <http://projects.spring.io/spring-boot/>
+[maven]: <https://maven.apache.org/>
