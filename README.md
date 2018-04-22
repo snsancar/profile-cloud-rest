@@ -57,16 +57,17 @@ Spring Data + Mongo DB.
 Storage Technology:
 ==================
 Mongo DB - Document-oriented NoSQL Database.
+
 Supports
-	- Indexing
-	- Replication - for High availability
-	- Load balancing - using Shards
+- Indexing
+- Replication - for High availability
+- Load balancing - using Shards
 
 Fault Tolerance:
 ================
 
 Circuit Breaker pattern using Netflix Hystrix
-	- using fall back method
+- using fall back method
 
 Scalability:
 ===========
