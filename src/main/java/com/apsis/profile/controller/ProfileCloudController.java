@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import com.apsis.profile.exception.ProfileCloudError;
 import com.apsis.profile.model.Counter;
 import com.apsis.profile.service.CounterService;
 
@@ -42,12 +43,12 @@ public class ProfileCloudController {
 	 * @param counterName
 	 * @return
 	 */
-	@GetMapping(value = "/{countername}", produces = MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(value = "/counter/{countername}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Counter> getCounterValue(@PathVariable("countername") String counterName) {
 
 		Counter counter = counterService.findByName(counterName);
 		if (counter == null) {
-            return new ResponseEntity<Counter>(HttpStatus.NOT_FOUND);
+            return new ResponseEntity(new ProfileCloudError("Counter with Name:" + counterName + " not found"), HttpStatus.NOT_FOUND);
         }
 		return new ResponseEntity<Counter>(counter, HttpStatus.OK);
 
@@ -58,9 +59,12 @@ public class ProfileCloudController {
 	 * @return List<Counter>
 	 */
 	@GetMapping(value = "/counters", headers = "Accept=application/json")
-	public List<Counter> getAllUser() {
+	public ResponseEntity<List<Counter>> getAllCounters() {
 		List<Counter> counters = counterService.getAllCounters();
-		return counters;
+		if (counters.isEmpty()) {
+            return new ResponseEntity(new ProfileCloudError("No Counters are available in the System"), HttpStatus.NO_CONTENT);
+        }
+		return new ResponseEntity<List<Counter>>(counters, HttpStatus.OK);
 
 	}
 
@@ -75,7 +79,7 @@ public class ProfileCloudController {
 		System.out.println("Creating Counter " + counter.getCounterName());
 		counterService.createCounter(counter);
 		HttpHeaders headers = new HttpHeaders();
-		headers.setLocation(ucBuilder.path("/profile/{countername}").buildAndExpand(counter.getValue()).toUri());
+		headers.setLocation(ucBuilder.path("/profile/counter/{countername}").buildAndExpand(counter.getValue()).toUri());
 		return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
 	}
 

@@ -3,6 +3,8 @@ package com.apsis.profile.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import com.apsis.profile.model.Counter;
@@ -15,6 +17,7 @@ import com.apsis.profile.model.Counter;
 @Service
 public class CounterServiceImpl implements CounterService {
 
+	public static final Logger logger = LoggerFactory.getLogger(CounterServiceImpl.class);
 	private static List<Counter> counters;
 	
 	static {

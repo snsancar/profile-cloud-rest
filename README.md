@@ -1,7 +1,7 @@
 # profile-cloud-rest
 Apsis:
 =======
-Coding Testing from Apsis AB, this is a RESTful webservice application to store/get the named counters details.
+Coding Testing from Apsis AB, this is a RESTful web service application to store/get the named counters details.
 
  - Implement Caching for storing the response from request, so next time it can get the response from cache to improve the performance.
 
@@ -36,7 +36,7 @@ http://localhost:8080/profile/create
 
 To get the Counter value for the specific Counter
 
-http://localhost:8080/profile/{counterName}
+http://localhost:8080/profile/counter/{counterName}
 
 
 To add the Counter value for the existing Counter
@@ -80,6 +80,11 @@ Authentication:
 
 - Basic HTTP Authentication with SSL
 - OAuth 2.0
+
+REST Documentation:
+===================
+
+- Using Swagger for documenting RESTful Services.
 
 
 [java]: <https://www.oracle.com/java/index.html>
