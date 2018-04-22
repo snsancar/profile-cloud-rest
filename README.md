@@ -42,6 +42,11 @@ To add the Counter value for the existing Counter
 
 http://localhost:8080/profile/update
 
+Exception Handling
+==================
+
+- Returned proper HTTP Status code for all the REST Methods.
+
 What needs to be done to make this as a complete REST Service
 =============================================================
 
